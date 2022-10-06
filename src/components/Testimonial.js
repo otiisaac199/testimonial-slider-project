@@ -2,7 +2,7 @@ import React from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FaQuoteRight } from "react-icons/fa";
 
-const Testimonial = ({ people, index }) => {
+const Testimonial = ({ people, index, setIndex }) => {
   return (
     <div className="section-center">
       {people.map((person, personIndex) => {
@@ -30,10 +30,10 @@ const Testimonial = ({ people, index }) => {
           </article>
         );
       })}
-      <button className="prev">
+      <button className="prev" onClick={() => setIndex(index - 1)}>
         <FiChevronLeft />
       </button>
-      <button className="next">
+      <button className="next" onClick={() => setIndex(index + 1)}>
         <FiChevronRight />
       </button>
     </div>
